@@ -3,7 +3,7 @@ title: Using Emacs in a local Nix environment
 ---
 
 In this blog post, I explain how to use Emacs in a local Nix
-environment for all modess, without needing mode-specific
+environment for all modes, without needing mode-specific
 configuration.
 
 ----------------------------------------------------------------------
