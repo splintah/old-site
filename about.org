@@ -1,0 +1,18 @@
+---
+title: About
+---
+
+I'm currently in the final year of secondary school in the
+Netherlands. Next year, I will be starting a double bachelor study of
+mathematics and computing science at the [[https://ru.nl/][Radboud Universiteit]] in
+Nijmegen.
+
+I'm interested in functional programming using [[https://haskell.org/][Haskell]], compiler
+construction, type systems and type theory, and formal verification
+using [[https://wiki.portal.chalmers.se/agda/pmwiki.php][Agda]].
+
+*** Links
+
+- [[https://gitlab.com/splintah][GitLab]]
+- [[https://github.com/splintah][GitHub]]
+

@@ -1,0 +1,11 @@
+pages:
+  image: nixos/nix:latest
+  stage: deploy
+  script:
+  - nix-build
+  - ./result/bin/site clean
+  - ./result/bin/site build
+  - cp -r _site public
+  artifacts:
+    paths:
+    - public

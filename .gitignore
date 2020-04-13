@@ -1,0 +1,12 @@
+# Emacs
+**/*~
+
+# Nix
+**/result
+
+# Hakyll
+_site
+_cache
+
+# Haskell
+dist-newstyle

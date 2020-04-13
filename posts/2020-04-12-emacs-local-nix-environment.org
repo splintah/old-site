@@ -1,0 +1,81 @@
+---
+title: Using Emacs in a local Nix environment
+---
+
+In this blog post, I explain how to use Emacs in a local Nix
+environment for all modess, without needing mode-specific
+configuration.
+
+----------------------------------------------------------------------
+
+Recently, I was trying to get [[https://github.com/haskell/haskell-mode][=haskell-mode=]] in Emacs to work inside a
+(local) Nix environment, à la =nix-shell=. I use Nix to manage my
+Haskell dependencies[fn:nix-haskell]. Those dependencies aren't
+installed globally (or rather, aren't in my =$PATH=), and I don't want
+them to be installed by Cabal, so building the project and running
+GHCI should happen inside a Nix environment.
+
+With =haskell-mode=, you can run the function =haskell-process-load-file=
+to run GHCI inside Emacs. If you set =haskell-process-type= to
+='cabal-repl= (or ='cabal-new-repl=), GHCI will use Cabal to manage
+dependencies, but it will run =cabal= in your =$PATH=, or the program
+specified in =haskell-process-path-cabal=.
+
+* Wrapper script
+
+So I created a script with the following contents:
+#+begin_src sh
+  args=$@
+  nix-shell --run "cabal $args"
+#+end_src
+..., and set =haskell-process-path-cabal= to the path to the script.
+
+This works quite well, but isn't very elegant.
+
+* Wrapper function
+
+Then I discovered the =haskell-mode= option
+=haskell-process-wrapper-function=, which `wraps or transforms Haskell
+process commands (...)', according to the documentation. The
+documentation even contains an example value which makes the process
+commands run inside a =nix-shell= (simplified a bit here):
+#+begin_src emacs-lisp
+  (setq haskell-process-wrapper-function
+        (lambda (argv)
+          (list "nix-shell"
+                "-I"
+                "."
+                "--command"
+                (mapconcat 'identity argv " "))))
+#+end_src
+
+This is works well, and is a lot more elegant than the script above.
+But it only works for =haskell-mode=: when I want to run Python with
+packages managed by Nix inside Emacs, I'll have to search =python-mode=
+for an option similar to =haskell-process-wrapper-function=. And when I
+want to use yet another language, ...
+
+* lorri and direnv
+  
+So I tried to find a general solution, and found [[https://github.com/target/lorri][lorri]]. lorri
+integrates [[https://direnv.net][direnv]] with Nix. With lorri, you don't need =nix-shell=
+anymore, since direnv automatically changes your path, and lorri
+automatically builds your shell environment. (See the [[https://github.com/target/lorri#demo][lorri
+demonstration]].)
+
+The direnv home page explains how to install a direnv hook into your
+shell, but you can also add direnv to Emacs: the [[https://github.com/wbolster/emacs-direnv][emacs-direnv]] package
+adds direnv support. It's as simple as adding the following to your
+Emacs configuration (if you use [[https://github.com/jwiegley/use-package][=use-package=]]):
+#+begin_src emacs-lisp
+  (use-package direnv
+    :config
+    (direnv-mode))
+#+end_src
+
+If you now visit a file in a directory where lorri is initialised,
+your environment variables will be updated, and you can run all sorts
+of processes (=haskell-mode='s GHCI, =python-mode='s REPL, =eshell=, etc.)
+inside a Nix environment.
+
+[fn:nix-haskell] Read how to do this in the [[https://nixos.org/nixpkgs/manual/#how-to-create-nix-builds-for-your-own-private-haskell-packages][Nixpkgs manual]].
