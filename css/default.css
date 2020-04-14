@@ -134,6 +134,10 @@ h2 {
   font-size: 2rem;
 }
 
+pre {
+  overflow-x: auto;
+}
+
 code {
   font-family: 'DejaVu Sans Mono', 'Fira Mono', monospace;
 }
