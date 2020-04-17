@@ -35,7 +35,7 @@ This works quite well, but isn't very elegant.
 * Wrapper function
 
 Then I discovered the =haskell-mode= option
-=haskell-process-wrapper-function=, which `wraps or transforms Haskell
+=haskell-process-wrapper-function=, which 'wraps or transforms Haskell
 process commands (...)', according to the documentation. The
 documentation even contains an example value which makes the process
 commands run inside a =nix-shell= (simplified a bit here):
