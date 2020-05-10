@@ -1,28 +1,40 @@
 /* DejaVu Serif fonts */
 @font-face {
   font-family: 'DejaVu Serif';
-  src: url('/fonts/DejaVuSerif.ttf') format('truetype');
+  src:
+      local('DejaVu Serif'),
+      local('DejaVuSerifRegular'),
+      url('/fonts/dejavu/DejaVuSerif.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'DejaVu Serif';
-  src: url('/fonts/DejaVuSerif-Bold.ttf') format('truetype');
+  src:
+      local('DejaVu Serif Bold'),
+      local('DejaVuSerifBold'),
+      url('/fonts/dejavu/DejaVuSerif-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'DejaVu Serif';
-  src: url('/fonts/DejaVuSerif-Italic.ttf') format('truetype');
+  src:
+      local('DejaVu Serif Bold Italic'),
+      local('DejaVuSerifBoldItalic'),
+      url('/fonts/dejavu/DejaVuSerif-Italic.ttf') format('truetype');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'DejaVu Serif';
-  src: url('/fonts/DejaVuSans-BoldItalic.ttf') format('truetype');
+  src:
+      local('DejaVu Serif Bold Italic'),
+      local('DejaVuSerifBoldItalic'),
+      url('/fonts/dejavu/DejaVuSans-BoldItalic.ttf') format('truetype');
   font-weight: bold;
   font-style: italic;
 }
@@ -30,28 +42,40 @@
 /* DejaVu Sans fonts */
 @font-face {
   font-family: 'DejaVu Sans';
-  src: url('/fonts/DejaVuSans.ttf') format('truetype');
+  src:
+      local('DejaVu Sans'),
+      local('DejaVuSansRegular'),
+      url('/fonts/dejavu/DejaVuSans.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'DejaVu Sans';
-  src: url('/fonts/DejaVuSans-Bold.ttf') format('truetype');
+  src:
+      local('DejaVu Sans Bold'),
+      local('DejaVuSansBold'),
+      url('/fonts/dejavu/DejaVuSans-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'DejaVu Sans';
-  src: url('/fonts/DejaVuSans-Oblique.ttf') format('truetype');
+  src:
+      local('DejaVu Sans Oblique'),
+      local('DejaVuSansOblique'),
+      url('/fonts/dejavu/DejaVuSans-Oblique.ttf') format('truetype');
   font-weight: normal;
   font-style: oblique;
 }
 
 @font-face {
   font-family: 'DejaVu Sans';
-  src: url('/fonts/DejaVuSans-BoldOblique.ttf') format('truetype');
+  src:
+      local('DejaVu Sans Bold Oblique'),
+      local('DejaVuSansBoldOblique'),
+      url('/fonts/dejavu/DejaVuSans-BoldOblique.ttf') format('truetype');
   font-weight: bold;
   font-style: oblique;
 }
@@ -59,30 +83,199 @@
 /* DejaVu Sans Mono fonts */
 @font-face {
   font-family: 'DejaVu Sans Mono';
-  src: url('/fonts/DejaVuSansMono.ttf') format('truetype');
+  src:
+      local('DejaVu Mono'),
+      local('DejaVuMono'),
+      url('/fonts/dejavu/DejaVuSansMono.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'DejaVu Sans Mono';
-  src: url('/fonts/DejaVuSansMono-Bold.ttf') format('truetype');
+  src:
+      local('DejaVu Mono Bold'),
+      local('DejaVuMonoBold'),
+      url('/fonts/dejavu/DejaVuSansMono-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'DejaVu Sans Mono';
-  src: url('/fonts/DejaVuSansMono-Oblique.ttf') format('truetype');
+  src:
+      local('DejaVu Mono Oblique'),
+      local('DejaVuMonoOblique'),
+      url('/fonts/dejavu/DejaVuSansMono-Oblique.ttf') format('truetype');
   font-weight: normal;
   font-style: oblique;
 }
 
 @font-face {
   font-family: 'DejaVu Sans Mono';
-  src: url('/fonts/DejaVuSansMono-BoldOblique.ttf') format('truetype');
+  src:
+      local('DejaVu Mono Bold Oblique'),
+      local('DejaVuMonoBoldOblique'),
+      url('/fonts/dejavu/DejaVuSansMono-BoldOblique.ttf') format('truetype');
   font-weight: bold;
   font-style: oblique;
+}
+
+/* IBM Plex Serif fonts */
+@font-face {
+  font-family: 'IBM Plex Serif';
+  src:
+      local('IBM Plex Serif'),
+      local('IBMPlexSerif'),
+      url('/fonts/ibm-plex/IBMPlexSerif-Regular.woff2') format('woff2'),
+      url('/fonts/ibm-plex/IBMPlexSerif-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IBM Plex Serif';
+  src:
+      local('IBM Plex Serif Italic'),
+      local('IBMPlexSerifItalic'),
+      url('/fonts/ibm-plex/IBMPlexSerif-Italic.woff2') format('woff2'),
+      url('/fonts/ibm-plex/IBMPlexSerif-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'IBM Plex Serif';
+  src:
+      local('IBM Plex Serif Bold'),
+      local('IBMPlexSerifBold'),
+      url('/fonts/ibm-plex/IBMPlexSerif-Bold.woff2') format('woff2'),
+      url('/fonts/ibm-plex/IBMPlexSerif-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IBM Plex Serif';
+  src:
+      local('IBM Plex Serif Bold Italic'),
+      local('IBMPlexSerifBoldItalic'),
+      url('/fonts/ibm-plex/IBMPlexSerif-BoldItalic.woff2') format('woff2'),
+      url('/fonts/ibm-plex/IBMPlexSerif-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'IBM Plex Serif Text';
+  src:
+      local('IBM Plex Serif Text'),
+      local('IBMPlexSerifText'),
+      url('/fonts/ibm-plex/IBMPlexSerif-Text.woff2') format('woff2'),
+      url('/fonts/ibm-plex/IBMPlexSerif-Text.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IBM Plex Serif Text';
+  src:
+      local('IBM Plex Serif Text Italic'),
+      local('IBMPlexSerifTextItalic'),
+      url('/fonts/ibm-plex/IBMPlexSerif-TextItalic.woff2') format('woff2'),
+      url('/fonts/ibm-plex/IBMPlexSerif-TextItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* IBM Plex Sans fonts */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src:
+      local('IBM Plex Sans'),
+      local('IBMPlexSans'),
+      url('/fonts/ibm-plex/IBMPlexSans-Regular.woff2') format('woff2'),
+      url('/fonts/ibm-plex/IBMPlexSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src:
+      local('IBM Plex Sans Italic'),
+      local('IBMPlexSansItalic'),
+      url('/fonts/ibm-plex/IBMPlexSans-Italic.woff2') format('woff2'),
+      url('/fonts/ibm-plex/IBMPlexSans-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src:
+      local('IBM Plex Sans Bold'),
+      local('IBMPlexSansBold'),
+      url('/fonts/ibm-plex/IBMPlexSans-Bold.woff2') format('woff2'),
+      url('/fonts/ibm-plex/IBMPlexSans-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src:
+      local('IBM Plex Sans Bold Italic'),
+      local('IBMPlexSansBoldItalic'),
+      url('/fonts/ibm-plex/IBMPlexSans-BoldItalic.woff2') format('woff2'),
+      url('/fonts/ibm-plex/IBMPlexSans-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* IBM Plex Mono fonts */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src:
+      local('IBM Plex Mono'),
+      local('IBMPlexMono'),
+      url('/fonts/ibm-plex/IBMPlexMono-Regular.woff2') format('woff2'),
+      url('/fonts/ibm-plex/IBMPlexMono-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src:
+      local('IBM Plex Mono Italic'),
+      local('IBMPlexMonoItalic'),
+      url('/fonts/ibm-plex/IBMPlexMono-Italic.woff2') format('woff2'),
+      url('/fonts/ibm-plex/IBMPlexMono-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src:
+      local('IBM Plex Mono Bold'),
+      local('IBMPlexMonoBold'),
+      url('/fonts/ibm-plex/IBMPlexMono-Bold.woff2') format('woff2'),
+      url('/fonts/ibm-plex/IBMPlexMono-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src:
+      local('IBM Plex Mono Bold Italic'),
+      local('IBMPlexMonoBoldItalic'),
+      url('/fonts/ibm-plex/IBMPlexMono-BoldItalic.woff2') format('woff2'),
+      url('/fonts/ibm-plex/IBMPlexMono-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
 }
 
 html {
@@ -90,7 +283,7 @@ html {
 }
 
 body {
-  font-family: 'DejaVu Serif', serif;
+  font-family: 'IBM Plex Serif Text', 'DejaVu Serif', serif;
   font-size: 1.6rem;
   color: #000;
 }
@@ -119,7 +312,7 @@ footer {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'DejaVu Sans', sans-serif;
+  font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif;
 }
 
 p {
@@ -139,7 +332,11 @@ pre {
 }
 
 code {
-  font-family: 'DejaVu Sans Mono', 'Fira Mono', monospace;
+  font-family: 'IBM Plex Mono', 'DejaVu Sans Mono', 'Fira Mono', monospace;
+}
+
+code.sourceCode {
+  font-family: 'DejaVu Sans Mono', 'IBM Plex Mono', 'Fira Mono', monospace;
 }
 
 a {

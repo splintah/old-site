@@ -34,7 +34,12 @@ main = do
     ----------------------------------------
     -- Fonts
     ----------------------------------------
-    match "fonts/*.ttf" $ do
+    let anyPattern :: [Pattern] -> Pattern
+        anyPattern = foldr1 (.||.)
+    match (anyPattern [ "fonts/dejavu/*.ttf"
+                      , "fonts/ibm-plex/*.woff2"
+                      , "fonts/ibm-plex/*.woff"
+                      ]) $ do
       route idRoute
       compile copyFileCompiler
 
