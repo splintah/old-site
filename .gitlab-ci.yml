@@ -2,10 +2,10 @@ pages:
   image: haskell:8.6.5
   stage: deploy
   script:
-  - cabal update
-  - cabal build
-  - cabal run blog -- clean
-  - cabal run blog -- build
+  - cabal new-update
+  - cabal new-build
+  - cabal new-run blog -- clean
+  - cabal new-run blog -- build
   - cp -r _site public
   artifacts:
     paths:
