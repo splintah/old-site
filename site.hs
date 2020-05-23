@@ -140,6 +140,8 @@ postCompiler = pandocCompilerWithTransform
       -- code blocks must therefore begin with "$+begin_src agda2".
       = Map.insert "Agda2" (writerSyntaxMap writerOptions Map.! "Agda")
       $ writerSyntaxMap writerOptions
+    , writerExtensions = enableExtension Ext_tex_math_double_backslash $ writerExtensions writerOptions
+    , writerHTMLMathMethod = MathJax ""
     }
   transform
   where
