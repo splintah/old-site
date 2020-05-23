@@ -1,10 +1,11 @@
 pages:
-  image: nixos/nix:latest
+  image: haskell:8.6.5
   stage: deploy
   script:
-  - nix-build
-  - ./result/bin/site clean
-  - ./result/bin/site build
+  - cabal update
+  - cabal build
+  - cabal run blog -- clean
+  - cabal run blog -- build
   - cp -r _site public
   artifacts:
     paths:
