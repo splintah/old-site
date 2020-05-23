@@ -237,6 +237,14 @@ ul.post-list span.post-date {
   font-style: italic;
 }
 
+li {
+    margin-top: 0.5rem;
+}
+
+hr {
+  color: #eee;
+}
+
 .sourceCode span.kw {
   color: #262C6A
 }
