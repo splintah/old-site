@@ -1,3 +1,7 @@
+cache:
+  paths:
+  - .cabal
+
 pages:
   image: haskell:8.6.5
   stage: deploy
