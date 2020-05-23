@@ -1,11 +1,13 @@
 {-# LANGUAGE OverloadedStrings #-}
 
+import           Data.Char                (toUpper)
 import qualified Data.Map.Strict          as Map
 import           Data.Monoid              (mappend)
 
 import           GHC.IO.Encoding          (setLocaleEncoding, utf8)
 
 import           Hakyll
+import           Hakyll.Web.Series
 
 import           Text.Pandoc
 import           Text.Pandoc.Highlighting
