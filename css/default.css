@@ -218,6 +218,10 @@ article .header {
   color: #555;
 }
 
+article .series-info {
+  margin-top: 1rem;
+}
+
 .logo a {
   color: #000;
   text-decoration: none;

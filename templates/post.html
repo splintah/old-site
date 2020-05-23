@@ -6,6 +6,11 @@
       by $author$
     $endif$
   </section>
+  $if(series)$
+    <section class="series-info">
+      This post is part $seriesCurPos$ of $seriesLength$ of the series <a href="$seriesUrl$">$series$</a>.
+    </section>
+  $endif$
   <section>
     $body$
   </section>

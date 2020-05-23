@@ -5,6 +5,7 @@
 , pandoc
 , pandoc-types
 , containers
+, hakyll-series
 }:
 mkDerivation {
   pname = "blog";
@@ -18,6 +19,7 @@ mkDerivation {
     pandoc-types
     pandoc
     containers
+    hakyll-series
   ];
   license = "unknown";
   hydraPlatforms = stdenv.lib.platforms.none;

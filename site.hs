@@ -58,17 +58,35 @@ main = do
     ----------------------------------------
     -- Posts
     ----------------------------------------
-    -- let postsGlob = fromList ["posts/*.org", "posts/*.md"]
     let postsGlob = "posts/*.org"
                .||. "posts/*.md"
                .||. "posts/*.markdown"
+               .||. "posts/*.lhs"
+
+    series <- buildSeries postsGlob (fromCapture "series/*.html")
+
     match postsGlob $ do
       route $ setExtension "html"
+      let ctx = postCtxWithSeries series
       compile $ postCompiler
-        >>= loadAndApplyTemplate "templates/post.html" postCtx
+        >>= loadAndApplyTemplate "templates/post.html" ctx
         >>= saveSnapshot "content"
-        >>= loadAndApplyTemplate "templates/default.html" postCtx
+        >>= loadAndApplyTemplate "templates/default.html" ctx
         >>= relativizeUrls
+
+    -- Build series page.
+    tagsRules series $ \(s:erie) pat -> do
+      let title = toUpper s : erie
+      route idRoute
+      compile $ do
+        posts <- chronological =<< loadAll pat
+        let ctx = constField "title" title `mappend`
+                  listField "posts" postCtx (pure posts) `mappend`
+                  defaultContext
+        makeItem ""
+          >>= loadAndApplyTemplate "templates/series.html" ctx
+          >>= loadAndApplyTemplate "templates/default.html" ctx
+          >>= relativizeUrls
 
     ----------------------------------------
     -- Index
@@ -142,8 +160,11 @@ shiftHeaders i p = walk go p
 
 postCtx :: Context String
 postCtx =
-    dateField "date" "%e %B %Y" `mappend`
-    defaultContext
+  dateField "date" "%e %B %Y" `mappend`
+  defaultContext
+
+postCtxWithSeries :: Tags -> Context String
+postCtxWithSeries series = seriesField series `mappend` postCtx
 
 feedConfiguration :: FeedConfiguration
 feedConfiguration = FeedConfiguration
