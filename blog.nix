@@ -15,6 +15,7 @@ mkDerivation {
   executableHaskellDepends = [
     base
     hakyll
+    pandoc-types
     pandoc
     containers
   ];
