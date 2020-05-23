@@ -232,7 +232,7 @@ ul.post-list {
   padding-left: 0;
 }
 
-ul.post-list span.post-date {
+span.post-date {
   color: #555;
   font-style: italic;
 }
