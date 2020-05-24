@@ -86,7 +86,7 @@ Terms
 -----
 
 There are five sorts of terms in the STLC.
-These are based on the terms of the untyped lambda calculus, with some additions: the syntax for abstractions is a bit different and values and computation constructs are added.
+These are based on the terms of the untyped lambda calculus, with some additions: the syntax for lambda abstractions is a bit different and values and computation constructs are added.
 The terms of the STLC consist of:
 
 1. *Variables*.
@@ -96,8 +96,8 @@ The terms of the STLC consist of:
    What strings are valid variable names is not very important here, since we aren't writing a parser.
    Variable names generally consist of alphanumeric characters, starting with an alphabetic character.
    We'll use this as an informal rule.
-2. *Abstractions*.
-   Abstractions are functions.
+2. *(Lambda) abstractions*.
+   Lambda abstractions (or in short: abstractions) are functions.
    They accept one[^Multiple-parameters] parameter and return a value.
    We write them like in the untyped lambda calculus, but add the type of the parameter.
 
@@ -135,7 +135,7 @@ $$
    \mid\ & \mathsf{True} & \text{(true)} \\
    \mid\ & n & \text{(integer)} \\
    \mid\ & x & \text{(variable)} \\
-   \mid\ & \lambda x : \tau.\ t & \text{(abstraction)} \\
+   \mid\ & \lambda x : \tau.\ t & \text{(lambda abstraction)} \\
    \mid\ & t\ t' & \text{(application)} \\
    \mid\ & t + t' & \text{(addition)} \\
    \mid\ & \mathbf{if}\ t\ \mathbf{then}\ t'\ \mathbf{else}\ t'' & \text{(if-then-else)}
@@ -159,7 +159,8 @@ Again, writing the Haskell definition is quite easy:
 >   | TmVar String
 >     -- ^ Variable
 >   | TmAbs String Type Term
->     -- ^ Abstraction. @TmAbs x ty t@ corresponds to @\x : ty. t@.
+>     -- ^ Lambda abstraction. @TmAbs x ty t@
+>     -- corresponds to @\x : ty. t@.
 >   | TmApp Term Term
 >     -- ^ Application
 >   | TmAdd Term Term
@@ -271,7 +272,7 @@ $$
   }
 $$
 
-The rule for abstractions looks like this:
+The rule for lambda abstractions looks like this:
 
 $$
   \text{T-Abs:}\ \frac{
@@ -344,7 +345,7 @@ Its type is:
  
 > data TypeError
 
-The variable was not bound by an abstraction.
+The variable was not bound by a lambda abstraction.
   
 >   = UnboundVariable String
 
@@ -384,7 +385,7 @@ We can implement T-Var with a simple lookup:
 >     Nothing -> Left $ UnboundVariable x
 >     Just ty -> Right ty
 
-For abstractions, ...
+For lambda abstractions, ...
 
 > typeOf ctx (TmAbs x ty t) =
 
@@ -397,7 +398,7 @@ For abstractions, ...
   
 >    in TyFun ty <$> ty'
 
-(Note that `TyFun ty <$> ty` is the same as:
+(Note that `TyFun ty <$> ty'` is the same as:
 
 < case typeOf ctx' t of
 <   Left e    -> Left e
@@ -513,7 +514,7 @@ Let's also take a look at terms that should be rejected.
 
 We expect our type checker to reject the term $\mathsf{True} + 1$, since we can't add booleans and integers:
 
-< typeOf Map.empty (Middy TmTrue (TmInt 1))
+< typeOf Map.empty (TmPlus TmTrue (TmInt 1))
 <   => Left (AdditionNonInteger TmTrue TyBool)
 
 Hurray, one mistake prevented!
