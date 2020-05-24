@@ -281,7 +281,7 @@ $$
   }
 $$
 
-To type check abstractions, we add $x : \tau$ to the context and check the type of $t$.
+To type check abstractions, we add $x : \tau$ to the context (because $t$ might use $x$) and check the type of $t$.
 We then know that the abstraction takes an argument of type $\tau$ and has a return type of the type of $t$.
 
 For applications, we need to have a term with a function type on the left side, that accepts an argument with the type of the right side:
