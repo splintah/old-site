@@ -1,6 +1,7 @@
 cache:
   paths:
-  - /root/.cabal
+  - dist
+  - dist-newstyle
 
 pages:
   image: haskell:8.6.5
