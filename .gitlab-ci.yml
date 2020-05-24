@@ -1,6 +1,6 @@
 cache:
   paths:
-  - .cabal
+  - /root/.cabal
 
 pages:
   image: haskell:8.6.5
