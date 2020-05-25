@@ -514,7 +514,7 @@ Let's also take a look at terms that should be rejected.
 
 We expect our type checker to reject the term $\mathsf{True} + 1$, since we can't add booleans and integers:
 
-< typeOf Map.empty (TmPlus TmTrue (TmInt 1))
+< typeOf Map.empty (TmAdd TmTrue (TmInt 1))
 <   => Left (AdditionNonInteger TmTrue TyBool)
 
 Hurray, one mistake prevented!
