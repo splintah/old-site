@@ -326,6 +326,30 @@ $$
   }
 $$
 
+These are all the typing rules we will be working with.
+
+To determine the type of a more complex term, we can combine the typing rules.
+The type of $\lambda n : \mathsf{Int}. 3 + n$, for example, is determined as follows:
+
+$$
+  \text{T-Abs: } \dfrac{
+    \text{T-Add: } \dfrac{
+      \text{T-Int: } \dfrac{}{
+        \vdash 3 : \mathsf{Int}
+      } \quad
+      \text{T-Var: } \dfrac{
+        n : \mathsf{Int} \in \varnothing, n : \mathsf{Int}
+      }{
+        \varnothing, n : \mathsf{Int} \vdash n : \mathsf{Int}
+      }
+    }{
+      \varnothing, n : \mathsf{Int} \vdash 3 + n : \mathsf{Int}
+    }
+  }{
+    \vdash \lambda n : \mathsf{Int}. 3 + n : \mathsf{Int} \rightarrow \mathsf{Int}
+  }
+$$
+
 Using these rules, we can implement a type checker in Haskell.
 
 Implementation
