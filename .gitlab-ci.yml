@@ -1,6 +1,7 @@
 cache:
   paths:
-  - /root/.cabal
+  - $HOME/.cabal/packages
+  - $HOME/.cabal/store
   - dist
   - dist-newstyle
 
