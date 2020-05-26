@@ -579,4 +579,4 @@ If you want to a play a bit more with this type checker, you might want to do on
    The type checker can be written in the `ReaderT Context (Except TypeError)` monad.
    [*Learn You a Haskell for Great Good*](http://learnyouahaskell.com) has an [introduction to monad transformers](http://learnyouahaskell.com/for-a-few-monads-more).
 
-In the next post, I'll describe how we can add more support for abstraction to the simply typed lambda calculus, and we'll take a look at *System F*.
+In the next post, I'll describe how we can add more support for abstraction to the simply typed lambda calculus, and we'll take a look at the *polymorphic lambda calculus*.
