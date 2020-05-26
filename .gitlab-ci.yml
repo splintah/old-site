@@ -1,5 +1,6 @@
 cache:
   paths:
+  - /root/.cabal
   - dist
   - dist-newstyle
 
