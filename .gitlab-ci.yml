@@ -1,7 +1,6 @@
 cache:
   paths:
-  - .cabal/packages
-  - .cabal/store
+  - .cabal
   - dist
   - dist-newstyle
 
