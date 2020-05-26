@@ -240,7 +240,7 @@ We use this notation for typing rules.
 The most simple rules are the rules for boolean and integer values:
 
 $$
-  \text{T-True:}\ \frac{}{\varnothing \vdash \mathsf{True} : \mathsf{Bool}}
+  \text{T-True: } \frac{}{\varnothing \vdash \mathsf{True} : \mathsf{Bool}}
 $$
 
 T-True is the name of the rule.
@@ -250,13 +250,13 @@ Instead of writing $\varnothing \vdash t : \tau$, the $\varnothing$ is usually o
 So, the rule for $\mathsf{False}$ is:
 
 $$
-  \text{T-False:}\ \frac{}{\vdash \mathsf{False} : \mathsf{Bool}}
+  \text{T-False: } \frac{}{\vdash \mathsf{False} : \mathsf{Bool}}
 $$
 
 And the rule for integers:
 
 $$
-  \text{T-Int:}\ \frac{}{\vdash n : \mathsf{Int}}
+  \text{T-Int: } \frac{}{\vdash n : \mathsf{Int}}
 $$
 
 Now let's write some more complex rules.
@@ -265,7 +265,7 @@ To denote that $x$ has type $\tau$ in $\Gamma$, we write: $x : \tau \in \Gamma$.
 So, the rule for variables is:
 
 $$
-  \text{T-Var:}\ \frac{
+  \text{T-Var: } \frac{
     x : \tau \in \Gamma
   }{
     \Gamma \vdash x : \tau
@@ -275,7 +275,7 @@ $$
 The rule for lambda abstractions looks like this:
 
 $$
-  \text{T-Abs:}\ \frac{
+  \text{T-Abs: } \frac{
     \Gamma, x : \tau \vdash t : \tau'
   }{
     \Gamma \vdash \lambda x : \tau. t : \tau \rightarrow \tau'
@@ -288,7 +288,7 @@ We then know that the abstraction takes an argument of type $\tau$ and has a ret
 For applications, we need to have a term with a function type on the left side, that accepts an argument with the type of the right side:
 
 $$
-  \text{T-App:}\ \frac{
+  \text{T-App: } \frac{
     \begin{array}{c}
       \Gamma \vdash t : \tau \rightarrow \tau' \\
       \Gamma \vdash t' : \tau
@@ -302,7 +302,7 @@ For an addition, we require that the two operands are both integers.
 The type of the addition is then also an integer:
 
 $$
-  \text{T-Add:}\ \frac{
+  \text{T-Add: } \frac{
     \begin{array}{c}
       \Gamma \vdash t : \mathsf{Int} \\
       \Gamma \vdash t' : \mathsf{Int}
@@ -315,7 +315,7 @@ $$
 When typing if-then-else terms, we expect the condition to be a boolean, and the two arms to have the same type:
 
 $$
-  \text{T-If:}\ \frac{
+  \text{T-If: } \frac{
     \begin{array}{c}
       \Gamma \vdash t_1 : \mathsf{Bool} \\
       \Gamma \vdash t_2 : \tau \\
