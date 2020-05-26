@@ -1,7 +1,7 @@
 cache:
   paths:
-  - $HOME/.cabal/packages
-  - $HOME/.cabal/store
+  - .cabal/packages
+  - .cabal/store
   - dist
   - dist-newstyle
 
@@ -9,10 +9,10 @@ pages:
   image: haskell:8.6.5
   stage: deploy
   script:
-  - cabal new-update
-  - cabal new-build
-  - cabal new-run blog -- clean
-  - cabal new-run blog -- build
+  - cabal --store-dir .cabal new-update
+  - cabal --store-dir .cabal new-build
+  - cabal --store-dir .cabal new-run blog -- clean
+  - cabal --store-dir .cabal new-run blog -- build
   - cp -r _site public
   artifacts:
     paths:
