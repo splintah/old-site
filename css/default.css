@@ -238,11 +238,16 @@ span.post-date {
 }
 
 li {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 hr {
   color: #eee;
+}
+
+details {
+  background-color: #f0f0f0;
+  padding: 5px;
 }
 
 .sourceCode span.kw {
