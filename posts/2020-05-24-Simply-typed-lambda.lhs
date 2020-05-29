@@ -429,7 +429,9 @@ For lambda abstractions, ...
 <   Right ty' -> Right (TyFun ty ty')
 
 But using the fact that [`Either`] is a [`Functor`] allows us to use [`fmap`], or the infix version [`(<$>)`].
-This is more succinct that an explicit `case`-`of`.)
+This is more succinct that an explicit `case`-`of`.
+
+In this `case`-`of` expression, `ty'` has type `Type`, but above `ty' :: Either TypeError Type`.)
 
 For type checking applications, we use the fact that [`Either`] is a [`Monad`], and use the [`do`-notation]:
 
