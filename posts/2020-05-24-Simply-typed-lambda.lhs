@@ -107,7 +107,7 @@ The terms of the STLC consist of:
    In the return value (which is written after the period), we can use the variable name $x$ to refer to the value that was *bound* (i.e., introduced) by the abstraction.
 3. *Applications*.
    This is just function application.
-   We write it using juxtaposition: $x$ applied to $f$ is written as $f\ x$.
+   We write it using juxtaposition: $f$ applied to $x$ is written as $f\ x$.
    Applications only really make sense when the left value is an abstraction (or a term that evaluates to one).
 4. *(Constant) values*.
    These are values like integers (`3`), booleans (`True`), characters (`'f'`) et cetera.
