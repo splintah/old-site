@@ -950,7 +950,7 @@ Some exercises you might like to do:
 2. Extend the language using other simple types and operations for them.
 
 And, if you have trouble understanding some parts, try to experiment with them a lot.
-And feel free to ask questions on Reddit (the link to the Reddit thread should be added after the post is made).
+And feel free to ask questions on [Reddit](https://www.reddit.com/r/haskell/comments/h8tpfj/type_inference_introduction_to_type_systems).
 
 Further reading
 ---------------
