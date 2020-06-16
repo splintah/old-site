@@ -888,15 +888,15 @@ Let's try it!
 
 The type of `id`:
 
-> polytypeOf tmId
->   => Right (TyForall ["A"] (TyFun (TyVar "A") (TyVar "A")))
+< polytypeOf tmId
+<   => Right (TyForall ["A"] (TyFun (TyVar "A") (TyVar "A")))
 
 That is $\forall A. A \rightarrow A$, correct!
 
 The type of `const`:
 
-> polytypeOf tmConst
->   => Right (TyForall ["A","B"] (TyFun (TyVar "A") (TyFun (TyVar "B") (TyVar "A"))))
+< polytypeOf tmConst
+<   => Right (TyForall ["A","B"] (TyFun (TyVar "A") (TyFun (TyVar "B") (TyVar "A"))))
 
 $\forall A\ B. A \rightarrow B \rightarrow A$, again correct!
 
@@ -908,8 +908,8 @@ $$
 \end{array}
 $$
 
-> polytypeOf (TmLet "id" (TmAbs "x" (TmVar "x")) (TmIf (TmApp (TmVar "id") TmTrue) (TmApp (TmVar "id") (TmInt 4)) (TmInt 5)))
->   => Right (TyForall [] TyInt)
+< polytypeOf (TmLet "id" (TmAbs "x" (TmVar "x")) (TmIf (TmApp (TmVar "id") TmTrue) (TmApp (TmVar "id") (TmInt 4)) (TmInt 5)))
+<   => Right (TyForall [] TyInt)
 
 And the same term, but using a lambda abstraction:
 
@@ -917,8 +917,8 @@ $$
   (\lambda \mathsf{id}. \mathbf{if}\ \mathsf{id}\ \mathsf{True}\ \mathbf{then}\ \mathsf{id}\ 4\ \mathbf{else}\ 5)\ (\lambda x. x)
 $$
 
-> polytypeOf (TmApp (TmAbs "id" (TmIf (TmApp (TmVar "id") TmTrue) (TmApp (TmVar "id") (TmInt 4)) (TmInt 5))) (TmAbs "x" (TmVar "x")))
->   => Left (UnifyError (CannotUnify TyBool TyInt))
+< polytypeOf (TmApp (TmAbs "id" (TmIf (TmApp (TmVar "id") TmTrue) (TmApp (TmVar "id") (TmInt 4)) (TmInt 5))) (TmAbs "x" (TmVar "x")))
+<   => Left (UnifyError (CannotUnify TyBool TyInt))
 
 Just like we expected, it can't unify $\mathsf{Bool} \sim \mathsf{Int}$.
 
@@ -931,8 +931,8 @@ $$
 \end{array}
 $$
 
-> polytypeOf $ TmLet "id" tmId $ TmLet "const" tmConst $ TmApp (TmApp (TmVar "const") (TmVar "id")) (TmVar "const")
->   => Right (TyForall ["F"] (TyFun (TyVar "F") (TyVar "F")))
+< polytypeOf $ TmLet "id" tmId $ TmLet "const" tmConst $ TmApp (TmApp (TmVar "const") (TmVar "id")) (TmVar "const")
+<   => Right (TyForall ["F"] (TyFun (TyVar "F") (TyVar "F")))
 
 It returns $\forall F. F \rightarrow F$, which is exactly the type of $\mathsf{id}$.
 
