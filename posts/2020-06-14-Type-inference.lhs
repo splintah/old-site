@@ -303,7 +303,7 @@ We apply this substitution to the rest of the constraints and solve the result, 
 Some examples:
 
 < solve [TyVar "X" :~: TyInt]
-<   => Right (fromList [("X",TyBool)])
+<   => Right (fromList [("X",TyInt)])
 <
 < solve [TyInt :~: TyBool]
 <   => Left (CannotUnify TyInt TyBool)
