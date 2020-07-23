@@ -202,7 +202,7 @@ $$
 This rule is quite simple: if $t$ has type $\tau$, then $\Lambda X. t$ has type $\forall X. \tau$.
 This is the introduction rule for polymorphic types, since it is the only typing rule that 'produces' a $\forall$.
 
-The rule for type abstractions is the elimination rule for polymorphic types: it 'removes' a $\forall$.
+The rule for type applications is the elimination rule for polymorphic types: it 'removes' a $\forall$.
 The rule is:
 
 $$
