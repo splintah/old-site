@@ -426,6 +426,8 @@ $$
 $$
 
 Applying the substitution with our definition of `subst` gives: $\forall B. B \rightarrow B \rightarrow B$.
+Note that the $B$'s that were first $A$'s are now *captured* by the $\forall B$, which means that they now refer to something they shouldn't refer to!
+
 The next step:
 
 $$
