@@ -26,7 +26,7 @@ In this post, we'll explore *type inference* or *reconstruction*.
 Motivation
 ==========
 
-In the polymorphic lambda calculus, we can write polymorphic (generic) functions that work on all types, using *parametric polymorphic*.
+In the polymorphic lambda calculus, we can write polymorphic (generic) functions that work on all types, using *parametric polymorphism*.
 This is a major benefit over the simply typed lambda calculus, because it reduces duplication: for example, we no longer have to write an identity function for every type that we might need one for, but can write exactly one identity function that works on all types.
 
 But, as you might have noticed, it is quite some work to use such polymorphic functions.
