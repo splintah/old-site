@@ -271,7 +271,7 @@ The constraint $X \sim X \rightarrow X$, for example, has no solution:
     
 >   | x `occursIn` t = Left $ InfiniteType x t
 
-Otherwise, we can just return the substitution which substitutes `x` for `t`:
+Otherwise, we can just return the substitution which substitutes `x` by `t`:
     
 >   | otherwise      = Right $ Map.fromList [(x, t)]
 
