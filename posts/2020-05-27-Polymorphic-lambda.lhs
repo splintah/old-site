@@ -398,7 +398,7 @@ Let's say we want to write a function that flips the type arguments of $\mathsf{
 And we're going to write it using the definition of $\mathsf{const}$ we've already written.
 Writing this function is quite easy: $\mathsf{constFlip} = \Lambda A. \Lambda B. \mathsf{const}\ B\ A$.
 
-The type of $\mathsf{const}$ is $\forall A. \forall B. A \rightarrow B \rightarrow B$, so what should the type of $\mathsf{constFlip}$ be?
+The type of $\mathsf{const}$ is $\forall A. \forall B. A \rightarrow B \rightarrow A$, so what should the type of $\mathsf{constFlip}$ be?
 Well, that should be $\forall A. \forall B. B \rightarrow A \rightarrow B$, right?
 Let's ask our type checker:
 
