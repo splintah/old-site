@@ -2,10 +2,9 @@
 title: About
 ---
 
-I'm currently in the final year of secondary school in the
-Netherlands. Next year, I will be starting a double bachelor study of
-mathematics and computing science at the [[https://ru.nl/][Radboud Universiteit]] in
-Nijmegen.
+I'm currently working as a Haskell developer at [[https://channable.com][Channable]]. After the
+summer, I will be starting a double bachelor study of mathematics and
+computing science at the [[https://ru.nl/][Radboud Universiteit]] in Nijmegen.
 
 I'm interested in functional programming with [[https://haskell.org/][Haskell]], type systems
 and type theory, compiler construction and formal verification using
