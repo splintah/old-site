@@ -12,10 +12,10 @@ and type theory, compiler construction and formal verification using
 [[https://wiki.portal.chalmers.se/agda/pmwiki.php][Agda]].
 
 This site is generated with [[http://jaspervdj.be/hakyll][Hakyll]] and its source is available on
-[[https://gitlab.com/splintah/splintah.gitlab.io/][GitLab]].
+[[https://github.com/splintah/splintah.github.io/][GitHub]].
 
 *** Links
 
-- [[https://gitlab.com/splintah][GitLab]]
-- [[https://github.com/splintah][GitHub]]
+- [[https://github.com/splintah][My GitHub profile]]
+- [[https://gitlab.com/splintah][My GitLab profile]]
 

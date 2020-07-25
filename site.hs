@@ -176,5 +176,5 @@ feedConfiguration = FeedConfiguration
   , feedDescription = "Splinter Suidmans blog"
   , feedAuthorName = "Splinter Suidman"
   , feedAuthorEmail = ""
-  , feedRoot = "https://splintah.gitlab.io"
+  , feedRoot = "https://splintah.github.io"
   }
