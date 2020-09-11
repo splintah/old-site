@@ -2,9 +2,9 @@
 title: About
 ---
 
-I'm currently working as a Haskell developer at [[https://channable.com][Channable]]. After the
-summer, I will be starting a double bachelor study of mathematics and
-computing science at the [[https://ru.nl/][Radboud Universiteit]] in Nijmegen.
+I am doing a double bachelor study of mathematics and computing
+science at the [[https://ru.nl/][Radboud Universiteit]] in Nijmegen and I'm working as a
+Haskell developer at [[https://channable.com][Channable]].
 
 I'm interested in functional programming with [[https://haskell.org/][Haskell]], type systems
 and type theory, compiler construction and formal verification using
