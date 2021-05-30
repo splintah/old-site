@@ -424,7 +424,7 @@ For lambda abstractions, ...
 
 (Note that `TyFun ty <$> ty'` is the same as:
 
-< case typeOf ctx' t of
+< case typeOf ctx' ty of
 <   Left e    -> Left e
 <   Right ty' -> Right (TyFun ty ty')
 
