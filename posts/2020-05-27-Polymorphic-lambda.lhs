@@ -419,7 +419,7 @@ The first step is:
 
 $$
   \text{T-TyApp: } \frac{
-    \Gamma \vdash \mathsf{const} : \forall A. \forall B. A \rightarrow B \rightarrow B
+    \Gamma \vdash \mathsf{const} : \forall A. \forall B. A \rightarrow B \rightarrow A
   }{
     \Gamma \vdash \mathsf{const}\ B : (\forall B. A \rightarrow B \rightarrow A)[A := B]
   }
