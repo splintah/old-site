@@ -16,7 +16,7 @@ jobs:
         nix_path: nixpkgs=channel:nixos-20.03
 
     # Pull from and push binaries to Cachix.
-    - uses: cachix/cachix-action@v6
+    - uses: cachix/cachix-action@v10
       with:
         name: splintah
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
