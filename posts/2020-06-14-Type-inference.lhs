@@ -169,7 +169,7 @@ A *constraint* $\tau \sim \tau'$ states that $\tau$ and $\tau'$ should be *unifi
 The constraint $A \sim B \rightarrow \mathsf{Int}$, for example, asserts that the type variable $A$ should be equal to the type $B \rightarrow \mathsf{Int}$.
 A *constraint set* $C$ is a set (or a list) of constraints.
 We want to write a a function that *unifies* a constraint set.
-This unification function will generate a substitution $\mathcal{S}$, such that the substitution *unifies* all constraints in $C$: for all constraints $\tau \sim \tau'$, $\mathcal{S} \tau$ (the substitution $\mathcal{S}$ applied tot type $\tau$) should be equal to $\mathcal{S} \tau'$.
+This unification function will generate a substitution $\mathcal{S}$, such that the substitution *unifies* all constraints in $C$: for all constraints $\tau \sim \tau'$, $\mathcal{S} \tau$ (the substitution $\mathcal{S}$ applied to the type $\tau$) should be equal to $\mathcal{S} \tau'$.
 
 In Haskell, we will create the following `Constraint` type, with the infix constructor `(:~:)` that corresponds to the $\sim$ in a constraint:
 
