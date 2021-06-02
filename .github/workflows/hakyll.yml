@@ -13,7 +13,10 @@ jobs:
     # Install Nix.
     - uses: cachix/install-nix-action@v13
       with:
-        nix_path: nixpkgs=channel:nixos-20.03
+        install_url: https://nixos-nix-install-tests.cachix.org/serve/lb41az54kzk6j12p81br4bczary7m145/install
+        install_options: '--tarball-url-prefix https://nixos-nix-install-tests.cachix.org/serve'
+        extra_nix_config: |
+          experimental-features = nix-command flakes
 
     # Pull from and push binaries to Cachix.
     - uses: cachix/cachix-action@v10
@@ -26,7 +29,7 @@ jobs:
     # Build the site using Nix.
     - name: Build site
       run: |
-        nix run -c site build
+        nix run .#build
 
     # Deploy the site to GitHub pages.
     - name: Deploy site
