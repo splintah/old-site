@@ -41,6 +41,7 @@ main = do
     match (anyPattern [ "fonts/dejavu/*.ttf"
                       , "fonts/ibm-plex/*.woff2"
                       , "fonts/ibm-plex/*.woff"
+                      , "fonts/gentium/*.woff"
                       ]) $ do
       route idRoute
       compile copyFileCompiler
